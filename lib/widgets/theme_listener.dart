@@ -44,8 +44,6 @@ class _ThemeListenerState extends State<ThemeListener> {
         AppTheme.colors = value.themeData.colorScheme;
         AppTheme.text = value.themeData.textTheme;
 
-        print(AppTheme.data.colorScheme.primary);
-
         return widget.builder(context, value, child);
       },
     );

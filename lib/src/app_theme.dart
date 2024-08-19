@@ -36,11 +36,6 @@ class AppTheme {
   ///
   late ThemeData themeData;
 
-  /// If true, the theme will use the system brightness for the AppTheme.
-  ///
-  /// This is optional and defaults to false.
-  final bool useSystemBrightness;
-
   /// An icon to represent the theme.
   ///
   /// This is optional.
@@ -54,31 +49,59 @@ class AppTheme {
     required this.themeName,
     this.description = '',
     required this.themeData,
-    this.useSystemBrightness = false,
     this.icon,
-  }) {
-    if (useSystemBrightness) {
-      Brightness brightness =
-          SchedulerBinding.instance.platformDispatcher.platformBrightness;
-
-      themeData = themeData.copyWith(
-        brightness: brightness,
-      );
-    }
-  }
+  });
 
   ///A variable to access the current theme's color scheme.
+  ///
   ///A color scheme must be defined in the ThemeData to access this variable.
   ///
-  static ColorScheme colors =
+  /// ### Example:
+  ///
+  /// ```dart
+  /// AppTheme.colors.primary
+  /// ```
+  ///
+  static ColorScheme? colors =
       ThemesUtil.currentTheme!.value.themeData.colorScheme;
 
   ///A variable to access the current theme's text theme.
+  ///
   ///A text theme must be defined in the ThemeData to access this variable.
+  ///
+  /// ### Example:
+  ///
+  /// ```dart
+  /// AppTheme.text.headline1
+  /// ```
   ///
   static TextTheme text = ThemesUtil.currentTheme!.value.themeData.textTheme;
 
   ///A variable to access the current themes data.
   ///
+  ///This variable is used to access the current theme's ThemeData.
+  ///
+  ///This variable is updated when the theme changes.
+  ///
+  /// ### Example:
+  ///
+  /// ```dart
+  /// AppTheme.data.appBarTheme
+  /// ```
   static ThemeData data = ThemesUtil.currentTheme!.value.themeData;
+
+  /// A getter to get the system brightness.
+  ///
+  /// This is used to set the brightness of the theme when creating an AppTheme.
+  ///
+  /// This is a static getter.
+  ///
+  /// ### Example:
+  ///
+  /// ```dart
+  /// AppTheme.systemBrightness
+  /// ```
+  ///
+  static Brightness get systemBrightness =>
+      SchedulerBinding.instance.platformDispatcher.platformBrightness;
 }
