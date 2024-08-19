@@ -12,14 +12,15 @@ class ThemeListener extends StatefulWidget {
   /// The [child] widget.
   /// This is required.
   /// This widget is rebuilt when the theme changes.
-  final Widget child;
+  final Widget Function(BuildContext context, AppTheme value, Widget? child)
+      builder;
 
   /// The callback that is called when the theme changes.
   /// This is optional.
   /// The new [AppTheme] is passed as a parameter to the callback.
   final Function(AppTheme)? onThemeChanged;
 
-  const ThemeListener({super.key, required this.child, this.onThemeChanged});
+  const ThemeListener({super.key, this.onThemeChanged, required this.builder});
 
   @override
   State<ThemeListener> createState() => _ThemeListenerState();
@@ -39,8 +40,13 @@ class _ThemeListenerState extends State<ThemeListener> {
     return ValueListenableBuilder(
       valueListenable: ThemesUtil.currentTheme!,
       builder: (context, value, child) {
-        widget.onThemeChanged?.call(value);
-        return child!;
+        AppTheme.data = value.themeData;
+        AppTheme.colors = value.themeData.colorScheme;
+        AppTheme.text = value.themeData.textTheme;
+
+        print(AppTheme.data.colorScheme.primary);
+
+        return widget.builder(context, value, child);
       },
     );
   }
