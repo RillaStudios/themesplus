@@ -13,7 +13,7 @@ and the Flutter guide for
 
 ThemesPlus is a Flutter package that helps you easily add and manage themes throughout your flutter app.
 
-<img src="https://raw.githubusercontent.com/RillaStudios/themesplus/ab8d8d24a46b21606ad498406b6956ad5aa03584/resources/responsive_img.png" alt="Responsive Design Image" style="width: 50%;">
+<img src="https://raw.githubusercontent.com/RillaStudios/themesplus/2fa28a8ba764dc0ab5a4eee18023cc299e920dc8/resources/exampleClip.gif" alt="Responsive Design Image" style="width: 50%;">
 
 ## Features
 
