@@ -32,7 +32,8 @@ void main() async {
         description: 'A red theme with auto system brightness.',
         id: "redTheme",
         themeData: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.red, brightness: AppTheme.systemBrightness),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.red, brightness: AppTheme.systemBrightness),
         ),
       ),
       AppTheme(
@@ -40,7 +41,8 @@ void main() async {
         description: 'A blue theme with dark brightness.',
         id: "blueTheme",
         themeData: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blue, brightness: Brightness.dark),
         ),
       ),
     ],
@@ -73,7 +75,8 @@ class MainApp extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Current Theme: ${ThemesUtil.currentTheme!.value.themeName}'),
+                  Text(
+                      'Current Theme: ${ThemesUtil.currentTheme!.value.themeName}'),
                   const SizedBox(height: 20),
                   Text(
                     ThemesUtil.currentTheme!.value.description,
@@ -83,7 +86,8 @@ class MainApp extends StatelessWidget {
                   FilledButton(
                     onPressed: () {
                       ThemesUtil.switchTheme();
-                      debugPrint('Switched Theme to ${ThemesUtil.currentTheme!.value.themeName}');
+                      debugPrint(
+                          'Switched Theme to ${ThemesUtil.currentTheme!.value.themeName}');
                     },
                     child: const Text('Switch Theme'),
                   ),

@@ -1,7 +1,10 @@
 name: themesplus
 description: "A package to easily manage themes in Flutter."
-version: 0.0.1
-homepage:
+version: 1.0.0
+homepage: https://rillastudios.ca/
+repository: https://github.com/RillaStudios/themesplus
+issue_tracker: https://github.com/RillaStudios/themesplus/issues
+funding: [https://www.buymeacoffee.com/izaakford]
 
 environment:
   sdk: ^3.5.0
