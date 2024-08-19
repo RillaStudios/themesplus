@@ -58,10 +58,15 @@ class MainApp extends StatelessWidget {
     /// This widget should be used at the root of the app. It is used to listen to theme changes.
     /// The [onThemeChanged] callback is called when the theme changes. It is optional and can
     /// be used to add custom features when a user switches a theme.
+    ///
+    /// The [child] widget is required.
+    ///
+    /// It is important to set the theme to [AppTheme.data] in the MaterialApp widget.
+    ///
     return ThemeListener(
       builder: (context, value, child) {
         return MaterialApp(
-          theme: AppTheme.data,
+          theme: AppTheme.data, //!Important to set the theme to AppTheme.data
           home: Scaffold(
             backgroundColor: AppTheme.colors!.surface,
             body: Center(

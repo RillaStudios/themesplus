@@ -22,10 +22,29 @@ The following is a list of features this package provides:
 - Dynamically switch themes throughout your app.
 - Add an unlimited amount of themes to your app.
 - Quickly and easily call theme attributes when building the UI.
+- Save theme to user settings so theme will be automatically set when app is opened.
 
 ## Switching Themes
 
-To switch a theme call the
+To switch a theme call the ThemesUtil.switchTheme() method.
+
+<h4>Method Parameters</h4>
+
+- themeName - Will switch the theme to the given theme name.
+- themeId - Will switch the theme to the given id.
+- saveToSettings - Will indicate weather or not to save the newly switched theme into user settings. By default this is true and does not need to be set unless you don't wish to save, in which case this parameter should be false.
+
+- Note: themeName and themeId cannot both be set, only one can be provided in the parameters.
+
+```dart
+FilledButton(
+    onPressed: () {
+    ThemesUtil.switchTheme();
+    debugPrint('Switched Theme to ${ThemesUtil.currentTheme!.value.themeName}');
+    },
+    child: const Text('Switch Theme'),
+),
+```
 
 ## 📋 Getting started
 
@@ -107,10 +126,15 @@ class MainApp extends StatelessWidget {
     /// This widget should be used at the root of the app. It is used to listen to theme changes.
     /// The [onThemeChanged] callback is called when the theme changes. It is optional and can
     /// be used to add custom features when a user switches a theme.
+    ///
+    /// The [child] widget is required.
+    ///
+    /// It is important to set the theme to [AppTheme.data] in the MaterialApp widget.
+    ///
     return ThemeListener(
       builder: (context, value, child) {
         return MaterialApp(
-          theme: AppTheme.data,
+          theme: AppTheme.data, //Important to set the theme to AppTheme.data
           home: Scaffold(
             backgroundColor: AppTheme.colors!.surface,
             body: Center(
