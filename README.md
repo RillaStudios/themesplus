@@ -13,7 +13,7 @@ and the Flutter guide for
 
 ThemesPlus is a Flutter package that helps you easily add and manage themes throughout your flutter app.
 
-<img src="https://raw.githubusercontent.com/RillaStudios/themesplus/2fa28a8ba764dc0ab5a4eee18023cc299e920dc8/resources/exampleClip.gif" alt="Responsive Design Image" style="width: 50%;">
+<img src="https://raw.githubusercontent.com/RillaStudios/themesplus/2fa28a8ba764dc0ab5a4eee18023cc299e920dc8/resources/exampleClip.gif" alt="Themes Example Gif" style="width: 50%;">
 
 ## Features
 
@@ -165,11 +165,11 @@ class MainApp extends StatelessWidget {
 
 <h3>🪄 Feature request?</h3>
 
-Have an idea to make this package even better? Tell us on the <a href="https://github.com/RillaStudios/responsiveplus/discussions">ResponsivePlus discussion page (GitHub)</a>
+Have an idea to make this package even better? Tell us on the <a href="https://github.com/RillaStudios/themesplus/discussions">ThemesPlus discussion page (GitHub)</a>
 
 <h3>🪲 Found a bug?</h3>
 
-Please report all bugs or issues on the <a href="https://github.com/RillaStudios/responsiveplus/issues">ResponsivePlus issues page (GitHub)</a>
+Please report all bugs or issues on the <a href="https://github.com/RillaStudios/themesplus/issues">ThemesPlus issues page (GitHub)</a>
 
 We encourage you to report anything package related to the GitHub repository pages as any and all input will help make this package even better in future versions!
 

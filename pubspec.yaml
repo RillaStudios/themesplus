@@ -1,6 +1,6 @@
 name: themesplus
-description: "A package to easily manage themes in Flutter."
-version: 1.0.0
+description: "ThemesPlus is a Flutter package that helps you easily add and manage themes throughout your flutter app."
+version: 1.0.1
 homepage: https://rillastudios.ca/
 repository: https://github.com/RillaStudios/themesplus
 issue_tracker: https://github.com/RillaStudios/themesplus/issues
@@ -14,7 +14,6 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.3.2
-  web: ^1.0.0
 
 dev_dependencies:
   flutter_test:
