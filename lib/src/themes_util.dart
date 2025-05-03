@@ -48,10 +48,8 @@ class ThemesUtil {
 
     /// Check if every theme has a unique name or id.
     for (AppTheme theme in themes) {
-      if (!themeNames.add(theme.themeName) ||
-          !themeNames.add(theme.id.toString())) {
-        throw Exception(
-            'Theme ${theme.themeName} already exists. Every theme must have a unique name.');
+      if (!themeNames.add(theme.themeName) || !themeNames.add(theme.id.toString())) {
+        throw Exception('Theme ${theme.themeName} already exists. Every theme must have a unique name.');
       }
     }
 
@@ -60,6 +58,7 @@ class ThemesUtil {
 
     /// Load the theme settings from the shared preferences.
     /// If the theme settings are not found, set the first theme as the default theme.
+    SharedPreferences.setPrefix('themes.');
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -70,9 +69,7 @@ class ThemesUtil {
 
       String themeId = themeSettingsMap['themeId'];
 
-      AppTheme? savedTheme = appThemes.firstWhere(
-          (element) => element.id == themeId,
-          orElse: () => appThemes.first);
+      AppTheme? savedTheme = appThemes.firstWhere((element) => element.id == themeId, orElse: () => appThemes.first);
 
       currentTheme = ValueNotifier(savedTheme);
     } else {
@@ -97,11 +94,9 @@ class ThemesUtil {
   /// - If neither is provided, the theme is switched to the next theme in the list.
   /// - If the current theme is the last theme in the list, the theme is switched to the first theme.
   /// - Throws an exception if the theme is not found.
-  static Future<void> switchTheme(
-      {String? themeName, String? themeId, bool? saveToSettings}) async {
+  static Future<void> switchTheme({String? themeName, String? themeId, bool? saveToSettings}) async {
     /// Assert only one of themeName or themeId is provided.
-    assert(!(themeName != null && themeId != null),
-        'Only one of themeName or themeId can be provided.');
+    assert(!(themeName != null && themeId != null), 'Only one of themeName or themeId can be provided.');
 
     /// Check if the theme name or theme id is provided.
     if (themeName != null || themeId != null) {
